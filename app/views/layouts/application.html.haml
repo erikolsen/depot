@@ -6,4 +6,23 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{class: controller.controller_name }
-    = yield
+    .div#banner
+      = image_tag('logo.png')
+      = @page_title || 'Pragmatic Bookshelf'
+    .div#columns
+      .div#side
+        %ul
+          %li
+            %a{href: '/'}
+              Home
+          %li
+            %a{href: 'faq'}
+              Questions
+          %li
+            %a{href: 'news'}
+              News
+          %li
+            %a{href: 'contact'}
+              Contacts
+      .div#main
+        = yield
